@@ -28,7 +28,7 @@ Accuinsight+ Pipeline서비스에는 mlTrain이라는 노드가 있다.
 
 위와 같이 카테고리별로 같은모델을 여러개 생성한다는 말이다.
 
-<img src = "./img/02 02 pipeline model/img3.png"></img>
+<img src = "./img/02 pipeline model/img3.png"></img>
 
 위와같이 신발, 옷, 모자, 바지 카테고리가 4개라면, mltrain 노드 4개를 두어 학습을 시키면 된다. 가능하다.  
 하지만, 카테고리가 90개 100개가 넘어가면 어떻게 할 것인가? 상식적으로 일일이 Drag & Drop으로 하나씩 넣고 데이터 등록하고 할 수는 없는 노릇이다.
