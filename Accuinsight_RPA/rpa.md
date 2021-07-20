@@ -68,7 +68,7 @@
             - Vault
                 - Password Management
                     - Read / Update secret
-                    > 변경 규칙 -> "Random prefix" + days + "!@"
+                    > 변경 규칙 -> "Random prefix" + random d + "특수문자"
             
         - Pipeline 자원 해제
             - SSO TOKEN
@@ -124,8 +124,8 @@
 - MCM
     - SPOT 클러스터가 내려가는 이슈
 - Modeler
-    - 사용시간 외 리소스 사용 불가하도록 
-    - 월화수목금토일 24시간제공 -> 월~금 근무시간(9~18)제공 -> 68% 비용절감
+    - 사용시간 외 리소스 사용 불가하도록 알고리즘 개발 
+    - 주 7일 24시간제공 -> 주 5일 근무시간(9~18)제공 -> 68% 비용절감
 - Slack
-    - <a url = 'https://github.com/kmh03214/BigData_Platform/blob/main/Slack/01%20Slack%20error%20channel_not_found.md'>Error : channel_not_found (Python SLACK API 연동)</a>
+    - <a href = 'https://github.com/kmh03214/BigData_Platform/blob/main/Slack/01%20Slack%20error%20channel_not_found.md'>Error : channel_not_found (Python SLACK API 연동)</a>
     - 글자 포맷팅 깨짐 이슈 <a>미완료</a>
