@@ -13,8 +13,11 @@
             - 클러스터 생성 및 스케쥴링 / 클러스터 권한부여 / 계정그룹설정 / IAM 생성(정책 및 권한 할당) / S3 생성 및 Pipeline 등록 / 모델러 프로젝트 생성 및 리소스할당 / 워커노드 생성(autoscaling그룹지정)
 
     2. 퍼블릭 서비스를 시작하면서, Trial사용 요청 증가로 해당 작업 공수 증가
+        - 교육 및 데모 증가
+
         - 계정이 늘어날 수록 관리해야 할 계정 및 Cloud 리소스 증가
             - 계정 및 패스워드 관리의 일관성이 없음.
+        
 
 > 발급과정 단순화 & 관리포인트 제거
 
@@ -29,20 +32,66 @@
         - Modeler (사용 스케쥴 및 사이트 정보 등)
 
 1. MCM
-    - 클러스터 생성
-    - 클러스터 스케쥴링
-    - 클러스터 특정 계정에 할당
+    - Cronjobs 30분마다 실행 (SPOT 클러스터가 내려가는 이슈)
+        - 클러스터 생성
+        - 클러스터 스케쥴링
+        - 클러스터 특정 계정에 할당
 
 
 2. Modeler
-    - asdf
+    - Project 생성 및 계정 할당
+
+    - Cronjobs 60분마다 실행 (다른계정은 리소스 사용 불가하도록)
+        - 스케쥴링
+            - EKS Autoscaling 그룹 워커노드 생성 및 종료
+            - Project 내 리소스(workspace / deploy ...) 해제
+        - 
 
 3. End service
-    - 서비스가 종료 되었을 때, 리소스 해제
+    - 서비스 사용기간이 종료 되었을 때, 리소스 해제
+        - 패스워드 변경
+            - Cloudz / Vault
+            
+        - Pipeline 자원 해제
+            - 
+
+        - 모델러 자원 해제
+            - Project
+                - 관리
+                    > 계정 사용중에는, STOP으로 비용절감
+                    >
+                    > 사용이 끝난 후에는, 삭제 
+                    - Workspace
+                        - GET / STOP / DELETE 
+                    - Deploy 
+                        - GET / STOP / DELETE
+                    - AutoML
+                        - GET / STOP / DELETE
+                    - AUTODL
+                        - GET / (STOP) / (DELETE)
+                    - DRIFT
+                        - GET / DELETE
+                
+                - ASSET
+                    - Deploy Storage
+                        - GET / DELETE
+                    
+                    - 분석이미지
+                        - GET / DELETE
+
+        - MCM 자원 해제
+            - Cluster Schedule 삭제
+
+        - Cloud 자원 해제 (S3)
+            - 폴더삭제 및 재생성
 
 4. Slack Notifications
-    - 
-
-
+    - Vault 정보 파싱
+        - 계정 사용현황
+        - 금일 리소스 사용현황 관리
 
 ## 4. Trouble shooting
+- MCM
+    - SPOT 클러스터가 내려가는 이슈
+- Modeler
+    - 다른계정은 리소스 사용 불가하도록
