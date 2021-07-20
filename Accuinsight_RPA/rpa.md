@@ -26,14 +26,17 @@
 
 ## 3. 기능 개발 및 구체화
 -----------------------------------------------
-
-0. 계정발급 (trial_user01 ~ trial_user40)
-    - 해당 계정에 대한 정보관리
-        - Password
-        - MCM (사용 스케쥴 및 사이트 정보 등)
-        - Modeler (사용 스케쥴 및 사이트 정보 등)
+### Manage Tool (Vault)
+-----------------------------------------------
+0. 계정발급 (trial_user01 ~ trial_user45)
+    - VAULT
+        - 해당 계정에 대한 정보관리
+            - Password
+            - MCM (사용 스케쥴 및 사이트 정보 등)
+            - Modeler (사용 스케쥴 및 사이트 정보 등)
 
 ------------------------------------------------
+### RPA Program ( Cronjobs )
 ------------------------------------------------
 1. MCM
     - Cronjobs 30분마다 실행 (SPOT 클러스터가 내려가는 이슈로 인해)
@@ -123,3 +126,6 @@
 - Modeler
     - 사용시간 외 리소스 사용 불가하도록 
     - 월화수목금토일 24시간제공 -> 월~금 근무시간(9~18)제공 -> 68% 비용절감
+- Slack
+    - <a url = 'https://github.com/kmh03214/BigData_Platform/blob/main/Slack/01%20Slack%20error%20channel_not_found.md'>Error : channel_not_found (Python SLACK API 연동)</a>
+    - 글자 포맷팅 깨짐 이슈 <a>미완료</a>
