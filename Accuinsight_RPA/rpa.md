@@ -46,7 +46,7 @@
 
 ------------------------------------------------
 2. Modeler
-    - Project 생성 및 계정 할당 <a> 미개발 </a>
+    - Project 생성 및 계정 할당 <span style="color:red"> 개발 미완료 </span>
 
     - Cronjobs 60분마다 실행 (사용시간 외 리소스 사용 불가하도록 개발)
         - 스케쥴링
@@ -62,8 +62,8 @@
     - 서비스 사용기간이 종료 되었을 때, 리소스 해제
         - CloudZ 패스워드 변경
             - Cloudz Password Change
-                - session create
-                - post -> password Change
+                - Session create
+                - Post -> Password Change
 
             - Vault
                 - Password Management
@@ -95,7 +95,7 @@
                     - AutoML
                         - GET / STOP / DELETE
                     - AUTODL
-                        - GET / <a> STOP </a> / <a> DELETE</a>
+                        - GET / <span style="color:red"> STOP </span> / <span style="color:red"> DELETE</span>
                     - 모델 모니터링 (DRIFT)
                         - GET / DELETE
                 
@@ -128,4 +128,4 @@
     - 주 7일 24시간제공 -> 주 5일 근무시간(9~18)제공 -> 68% 비용절감
 - Slack
     - <a href = 'https://github.com/kmh03214/BigData_Platform/blob/main/Slack/01%20Slack%20error%20channel_not_found.md'>Error : channel_not_found (Python SLACK API 연동)</a>
-    - 글자 포맷팅 깨짐 이슈 <a>미완료</a>
+    - 글자 포맷팅 깨짐 이슈 <span style="color:red">미완료</span>
