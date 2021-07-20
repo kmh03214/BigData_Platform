@@ -25,35 +25,59 @@
 ## 2. 설계
 
 ## 3. 기능 개발 및 구체화
+-----------------------------------------------
+
 0. 계정발급 (trial_user01 ~ trial_user40)
     - 해당 계정에 대한 정보관리
         - Password
         - MCM (사용 스케쥴 및 사이트 정보 등)
         - Modeler (사용 스케쥴 및 사이트 정보 등)
 
+------------------------------------------------
+------------------------------------------------
 1. MCM
-    - Cronjobs 30분마다 실행 (SPOT 클러스터가 내려가는 이슈)
-        - 클러스터 생성
-        - 클러스터 스케쥴링
-        - 클러스터 특정 계정에 할당
+    - Cronjobs 30분마다 실행 (SPOT 클러스터가 내려가는 이슈로 인해)
+        1. 클러스터 생성
+        2. 클러스터 스케쥴링
+        3. 클러스터 특정 계정에 할당
 
-
+------------------------------------------------
 2. Modeler
-    - Project 생성 및 계정 할당
+    - Project 생성 및 계정 할당 <a> 미개발 </a>
 
-    - Cronjobs 60분마다 실행 (다른계정은 리소스 사용 불가하도록)
+    - Cronjobs 60분마다 실행 (사용시간 외 리소스 사용 불가하도록 개발)
         - 스케쥴링
-            - EKS Autoscaling 그룹 워커노드 생성 및 종료
-            - Project 내 리소스(workspace / deploy ...) 해제
-        - 
+            - CORE TIME (사용시간 내)
+                1. EKS Autoscaling 그룹 워커노드 Scale out
 
+            - NON CORE TIME (사용시간 외)
+                1. Project 내 리소스(workspace / deploy ...) STOP
+                2. EKS Autoscaling 그룹 워커노드 Scale in
+        - 
+------------------------------------------------
 3. End service
     - 서비스 사용기간이 종료 되었을 때, 리소스 해제
-        - 패스워드 변경
-            - Cloudz / Vault
+        - CloudZ 패스워드 변경
+            - Cloudz Password Change
+                - session create
+                - post -> password Change
+
+            - Vault
+                - Password Management
+                    - Read / Update secret
+                    > 변경 규칙 -> "Random prefix" + days + "!@"
             
         - Pipeline 자원 해제
-            - 
+            - SSO TOKEN
+                - GET
+            - WORKFLOW
+                - GET / DELETE
+            - DATASET
+                - GET / DELETE
+            - MODELS
+                - GET / DELETE
+            - S3 (Cloud)
+                - CREATE / DELETE
 
         - 모델러 자원 해제
             - Project
@@ -68,8 +92,8 @@
                     - AutoML
                         - GET / STOP / DELETE
                     - AUTODL
-                        - GET / (STOP) / (DELETE)
-                    - DRIFT
+                        - GET / <a> STOP </a> / <a> DELETE</a>
+                    - 모델 모니터링 (DRIFT)
                         - GET / DELETE
                 
                 - ASSET
@@ -82,16 +106,20 @@
         - MCM 자원 해제
             - Cluster Schedule 삭제
 
-        - Cloud 자원 해제 (S3)
-            - 폴더삭제 및 재생성
+------------------------------------------------
 
 4. Slack Notifications
     - Vault 정보 파싱
         - 계정 사용현황
         - 금일 리소스 사용현황 관리
 
+
+------------------------------------------------
+------------------------------------------------
+
 ## 4. Trouble shooting
 - MCM
     - SPOT 클러스터가 내려가는 이슈
 - Modeler
-    - 다른계정은 리소스 사용 불가하도록
+    - 사용시간 외 리소스 사용 불가하도록 
+    - 월화수목금토일 24시간제공 -> 월~금 근무시간(9~18)제공 -> 68% 비용절감
