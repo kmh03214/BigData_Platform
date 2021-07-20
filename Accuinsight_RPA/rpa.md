@@ -5,7 +5,7 @@
 
 - 문제 상황
     1. 계정 발급 및 리소스 생성이 반복적이고 비효율적 ( 계정 당 40분 )
-        - 발급과정이 복잡함 ( 매뉴얼 : https://myshare.skcc.com/pages/viewpage.action?pageId=108190288 )
+        - 발급과정이 복잡함 ( 매뉴얼 : https://myshare.skcc.com/pages/viewpage.action?pageId=108190288 ) & 관리자가 바뀔 때 마다 인수인계 복잡함. (휴가를 가야한다거나...)
         
         - 계정발급절차
             - 계정생성 / 메일확인 및 패스워드 설정 / 로그인 및 약관동의 / 서비스구매 / 서비스 관리자계정으로 권한부여
