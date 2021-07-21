@@ -71,7 +71,7 @@
                     - Read / Update secret
                     > 변경 규칙 -> "Random prefix" + random d + "특수문자"
             
-        - Pipeline 자원 해제
+        - Pipeline 자원 해제 (진행중)
             - SSO TOKEN
                 - GET
             - WORKFLOW
@@ -83,7 +83,7 @@
             - S3 (Cloud)
                 - CREATE / DELETE
 
-        - 모델러 자원 해제
+        - 모델러 자원 해제 (진행중)
             - Project
                 - 관리
                     > 계정 사용중에는, STOP으로 비용절감
