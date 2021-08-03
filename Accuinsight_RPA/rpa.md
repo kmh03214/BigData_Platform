@@ -47,7 +47,7 @@
 
 ------------------------------------------------
 2. Modeler
-    - Project 생성 및 계정 할당 <span style="color:red"> 개발 미완료 </span>
+    - Project 생성 및 계정 할당 <span style="color:red"> 개발 완료 </span>
         - 완료 : 추가로, 지정된 프로젝트 이 외의 프로젝트를 생성시에는 자동삭제 로직 추가해야함
         - 기존에 vault에서 관리 안하는 같은 이름의 project가 있을 때, 처리필요 
 
@@ -74,16 +74,17 @@
                     > 변경 규칙 -> "Random prefix" + random d + "특수문자"
             
         - Pipeline 자원 해제 (진행중)
-            - SSO TOKEN
+            - SSO TOKEN (완)
                 - GET
-            - WORKFLOW
+            - WORKFLOW (완)
                 - GET / DELETE
-            - DATASET
+            - DATASET (완)
                 - GET / DELETE
-            - MODELS
+            - MODELS (완)
                 - GET / DELETE
-            - S3 (Cloud)
+            - S3 (Cloud) (완)
                 - CREATE / DELETE
+            - 프로젝트 삭제 (미완료)
 
         - 모델러 자원 해제 (진행중)
             - Project
@@ -96,9 +97,9 @@
                     - Deploy 
                         - GET / STOP / DELETE
                     - AutoML
-                        - GET / STOP / DELETE
+                        - GET / / DELETE
                     - AUTODL
-                        - GET / <span style="color:red"> STOP </span> / <span style="color:red"> DELETE</span>
+                        - GET / / <span style="color:red"> DELETE</span>
                     - 모델 모니터링 (DRIFT)
                         - GET / DELETE
                 
